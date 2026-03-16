@@ -1,4 +1,4 @@
-import { Variants } from "framer-motion";
+import { Variants, TargetAndTransition } from "framer-motion";
 
 // Reusable Animation Presets 
 // Import these across components. Never write animations inline.
@@ -36,6 +36,36 @@ export const staggerContainer: Variants = {
             staggerChildren: 0.12,
             delayChildren: 0.1,
         },
+    },
+};
+
+// Float animation for decorative images
+export const floatAnimation: TargetAndTransition = {
+    y: [0, -14, 0],
+    transition: {
+        duration: 4,
+        repeat: Infinity,
+        ease: "easeInOut",
+    },
+};
+
+export const floatAnimationDelayed: TargetAndTransition = {
+    y: [0, -10, 0],
+    transition: {
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 1.2,
+    },
+};
+
+export const floatAnimationSlow: TargetAndTransition = {
+    y: [0, -8, 0],
+    transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 0.6,
     },
 };
 

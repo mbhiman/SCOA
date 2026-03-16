@@ -1,16 +1,5 @@
 @import "tailwindcss";
 
-:root {
-  --bg: #F8FAFC;
-  --bg-card: #FFFFFF;
-  --bg-input: #FFFFFF;
-  --text: #0F172A;
-  --text-muted: #475569;
-  --border: #E2E8F0;
-  --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
-  --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.14);
-}
-
 @theme {
   --font-display: "Sora", sans-serif;
   --font-body: "DM Sans", sans-serif;
@@ -27,6 +16,17 @@
   --color-ink: #0F172A;
   --color-ink-soft: #475569;
   --color-ink-faint: #94A3B8;
+}
+
+:root {
+  --bg: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-input: #FFFFFF;
+  --text: #0F172A;
+  --text-muted: #475569;
+  --border: #E2E8F0;
+  --shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 16px 48px rgba(15, 23, 42, 0.14);
 }
 
 .dark {
@@ -106,5 +106,42 @@
 
   .btn-ghost:hover {
     background-color: var(--bg-input);
+  }
+
+  .card {
+    background-color: var(--bg-card);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+  }
+
+  .input-field {
+    width: 100%;
+    border-radius: 0.625rem;
+    border: 1.5px solid var(--border);
+    background-color: var(--bg-input);
+    padding: 0.75rem 1rem;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+  }
+
+  .input-field::placeholder {
+    color: var(--text-muted);
+    opacity: 0.7;
+  }
+
+  .input-field:focus {
+    border-color: #2874F0;
+    box-shadow: 0 0 0 3px rgba(40, 116, 240, 0.15);
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
   }
 }

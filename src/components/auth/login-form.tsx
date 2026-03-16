@@ -114,7 +114,7 @@ export default function LoginForm() {
                 <div className="flex items-end gap-2">
                     <div className="flex-1">
                         <Input
-                            label="OTP (Optional)"
+                            label="OTP"
                             placeholder="6-digit OTP"
                             type="text"
                             maxLength={6}
