@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import Navbar from "../components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "Flipkart SCOA — Home",
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col" style={{ backgroundColor: "var(--bg)" }}>
+      <Navbar />
       <div className="flex flex-1 items-center justify-center px-4">
         <div className="text-center max-w-xl">
           <h1
