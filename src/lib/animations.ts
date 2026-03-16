@@ -28,3 +28,13 @@ export const scaleIn: Variants = {
         transition: { duration: 0.5, ease: [0.34, 1.56, 0.64, 1] },
     },
 };
+
+// Hover button scale
+export const buttonHover = {
+    scale: 1.03,
+    transition: { duration: 0.15 },
+};
+
+export const buttonTap = {
+    scale: 0.97,
+};
