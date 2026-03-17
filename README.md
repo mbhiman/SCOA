@@ -1,36 +1,154 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Flipkart SCOA Frontend
 
-## Getting Started
+A **modern SaaS-style frontend** for the **Flipkart Supply Chain Operations Academy (SCOA)** built with Next.js, Tailwind CSS v4, and a scalable design system.
 
-First, run the development server:
+---
+
+## 🌐 Overview
+
+The **Flipkart Supply Chain Operations Academy (SCOA)** is a training and certification initiative that prepares youth for careers in:
+
+* 📦 Warehousing
+* 🚚 Delivery Operations
+* 📊 Data Entry
+* 🔗 Supply Chain Management
+
+This platform will enable:
+
+* Course exploration
+* User authentication
+* Enrollment workflows
+* Student dashboard (coming soon)
+
+---
+
+## ✨ Features (So Far)
+
+### 🔐 Authentication UI
+
+* Login + Register forms
+* OTP + mobile-based structure
+* Clean, accessible form components
+
+### 🎨 Design System
+
+* Token-driven styling (`globals.css`)
+* Semantic utilities:
+
+  * `bg-base`, `bg-card`
+  * `text-ink`, `text-muted`, `text-primary`
+  * `border-soft`
+
+✔ No hardcoded colors
+✔ Fully theme-driven UI
+
+---
+
+### 🌗 Dark Mode
+
+* Powered by `next-themes`
+* Tailwind `dark:` utilities
+* System + Light + Dark support
+
+---
+
+### ⚡ Animations
+
+* Built with Framer Motion
+* Centralized animation system:
+
+```bash
+/lib/animations.ts
+```
+
+Includes:
+
+* fadeIn
+* slideUp
+* scaleIn
+* staggerContainer
+
+---
+
+### 📱 Responsive Design
+
+* Mobile-first approach
+* Adaptive layouts
+
+| Screen  | Layout     |
+| ------- | ---------- |
+| Mobile  | Stacked    |
+| Tablet  | Grid       |
+| Desktop | Two-column |
+
+---
+
+### 🧩 Component Architecture
+
+```bash
+components/
+├── ui/
+│   ├── navbar.tsx
+│   ├── button.tsx
+│   └── input.tsx
+│
+├── auth/
+│   ├── login-form.tsx
+│   └── register-form.tsx
+│
+└── animations/
+    └── fade-in.tsx
+```
+
+✔ Modular
+✔ Reusable
+✔ Scalable
+
+---
+
+## ⚙️ Getting Started
+
+### 1️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 2️⃣ Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3️⃣ Open in browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000/
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🧠 Design Principles
 
-To learn more about Next.js, take a look at the following resources:
+This project follows modern SaaS frontend standards:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* 🎯 Clean UI & spacing
+* 🧩 Reusable components
+* 🎨 Token-based styling
+* ⚡ Minimal dependencies
+* 📦 Scalable architecture
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠 Tech Stack
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Tool                  | Purpose             |
+| --------------------- | ------------------- |
+| Next.js (App Router)  | Framework           |
+| Tailwind CSS v4       | Styling             |
+| next-themes           | Theme management    |
+| Framer Motion         | Animations          |
+| TypeScript            | Type safety         |
+| clsx + tailwind-merge | Class utilities     |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
