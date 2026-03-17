@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Metadata } from "next";
-import Navbar from "../components/ui/navbar";
+import Navbar from "@/src/components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "Flipkart SCOA — Home",
@@ -10,18 +10,17 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen flex flex-col" style={{ backgroundColor: "var(--bg)" }}>
+    <main className="min-h-screen flex flex-col bg-base">
       <Navbar />
       <div className="flex flex-1 items-center justify-center px-4">
         <div className="text-center max-w-xl">
           <h1
-            className="text-4xl md:text-5xl font-bold mb-4 leading-tight"
-            style={{ fontFamily: "var(--font-display)", color: "var(--text)" }}
+            className="font-display text-ink text-4xl md:text-5xl font-bold mb-4 leading-tight"
           >
             Flipkart Supply Chain<br />
-            <span style={{ color: "#2874F0" }}>Operations Academy</span>
+            <span className="text-primary">Operations Academy</span>
           </h1>
-          <p className="text-lg mb-8" style={{ color: "var(--text-muted)" }}>
+          <p className="text-muted text-lg mb-8">
             Free training &amp; certification in e-commerce logistics, warehousing, and delivery operations.
           </p>
           <Link
