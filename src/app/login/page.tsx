@@ -12,30 +12,23 @@ import {
     floatAnimationDelayed,
     floatAnimationSlow,
 } from "@/src/lib/animations";
+import { cn } from "@/src/lib/utils";
 import Navbar from "@/src/components/ui/navbar";
 import LoginForm from "@/src/components/auth/login-form";
 import RegisterForm from "@/src/components/auth/register-form";
 
 type Tab = "login" | "register";
 
-/**
- * Login page — 2-column layout.
- * LEFT: Floating decorative images with stats overlay.
- * RIGHT: Auth card with tabbed Login/Register forms.
- */
 export default function LoginPage() {
     const [activeTab, setActiveTab] = useState<Tab>("login");
 
     return (
-        <div
-            className="min-h-screen relative overflow-hidden"
-            style={{ backgroundColor: "var(--bg)" }}
-        >
+        <div className="min-h-screen relative overflow-hidden bg-base">
             <Navbar />
 
-            {/* Background decorative blobs */}
+            {/* Background decorative blobs — radial-gradient is a one-off value, inline is acceptable */}
             <div
-                className="absolute top-0 right-0 w-105 h-105 rounded-full opacity-20 blur-3xl pointer-events-none"
+                className="absolute top-0 right-0 w-150 h-150 rounded-full opacity-20 blur-3xl pointer-events-none"
                 style={{ background: "radial-gradient(circle, #2874F0 0%, transparent 70%)" }}
             />
             <div
@@ -56,31 +49,21 @@ export default function LoginPage() {
                         >
                             {/* Heading copy */}
                             <motion.div variants={slideUp} className="mb-8">
-                                <span
-                                    className="inline-block mb-3 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase"
-                                    style={{
-                                        backgroundColor: "rgba(40,116,240,0.12)",
-                                        color: "#2874F0",
-                                        fontFamily: "var(--font-body)",
-                                    }}
-                                >
+                                <span className="inline-block mb-3 px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary font-body">
                                     🎓 Free Certification Program
                                 </span>
-                                <h1
-                                    className="text-4xl xl:text-5xl font-bold leading-tight mb-3"
-                                    style={{ fontFamily: "var(--font-display)", color: "var(--text)" }}
-                                >
+                                <h1 className="font-display text-ink text-4xl xl:text-5xl font-bold leading-tight mb-3">
                                     Build Your Career in{" "}
-                                    <span style={{ color: "#2874F0" }}>Supply Chain</span>
+                                    <span className="text-primary">Supply Chain</span>
                                 </h1>
-                                <p className="text-base leading-relaxed" style={{ color: "var(--text-muted)" }}>
+                                <p className="text-muted text-base leading-relaxed">
                                     6 days classroom training + 45 days paid on-the-job training with India's leading e-commerce company.
                                 </p>
                             </motion.div>
 
                             {/* Image grid — floating layout */}
                             <div className="relative h-105">
-                                {/* Image 1 — large, left */}
+                                {/* Image 1 — large, left. boxShadow with primary-tinted rgba is a one-off, kept inline */}
                                 <motion.div
                                     variants={scaleIn}
                                     animate={floatAnimation}
@@ -97,7 +80,7 @@ export default function LoginPage() {
                                     />
                                 </motion.div>
 
-                                {/* Image 2 — top right, smaller */}
+                                {/* Image 2 — top right. Custom shadow tint kept inline */}
                                 <motion.div
                                     variants={scaleIn}
                                     animate={floatAnimationDelayed}
@@ -129,7 +112,7 @@ export default function LoginPage() {
                                     />
                                 </motion.div>
 
-                                {/* Image 4 — bottom left overlap */}
+                                {/* Image 4 — bottom left overlap. Accent-tinted shadow kept inline */}
                                 <motion.div
                                     variants={scaleIn}
                                     animate={{
@@ -150,23 +133,17 @@ export default function LoginPage() {
                             </div>
 
                             {/* Stats strip */}
-                            <motion.div
-                                variants={slideUp}
-                                className="mt-6 flex items-center gap-6"
-                            >
+                            <motion.div variants={slideUp} className="mt-6 flex items-center gap-6">
                                 {[
-                                    { value: "200,000+", label: "Trained Students" },
+                                    { value: "10,000+", label: "Trained Students" },
                                     { value: "51", label: "Cities Covered" },
                                     { value: "Free", label: "Certification" },
                                 ].map((stat) => (
                                     <div key={stat.label} className="flex flex-col">
-                                        <span
-                                            className="text-2xl font-bold"
-                                            style={{ fontFamily: "var(--font-display)", color: "#2874F0" }}
-                                        >
+                                        <span className="font-display text-primary text-2xl font-bold">
                                             {stat.value}
                                         </span>
-                                        <span className="text-xs font-medium" style={{ color: "var(--text-muted)" }}>
+                                        <span className="text-muted text-xs font-medium">
                                             {stat.label}
                                         </span>
                                     </div>
@@ -191,20 +168,14 @@ export default function LoginPage() {
                                                 <path d="M16 7V5c0-1.1-.9-2-2-2h-4c-1.1 0-2 .9-2 2v2" />
                                             </svg>
                                         </div>
-                                        <span
-                                            className="text-xs font-bold tracking-widest uppercase"
-                                            style={{ color: "#2874F0", fontFamily: "var(--font-body)" }}
-                                        >
+                                        <span className="font-body text-primary text-xs font-bold tracking-widest uppercase">
                                             Flipkart SCOA
                                         </span>
                                     </div>
-                                    <h2
-                                        className="text-2xl font-bold"
-                                        style={{ fontFamily: "var(--font-display)", color: "var(--text)" }}
-                                    >
+                                    <h2 className="font-display text-ink text-2xl font-bold">
                                         {activeTab === "login" ? "Welcome back" : "Join the program"}
                                     </h2>
-                                    <p className="text-sm mt-1" style={{ color: "var(--text-muted)" }}>
+                                    <p className="text-muted text-sm mt-1">
                                         {activeTab === "login"
                                             ? "Sign in to your SCOA portal"
                                             : "Create your free account today"}
@@ -212,24 +183,21 @@ export default function LoginPage() {
                                 </div>
 
                                 {/* Tab switcher */}
-                                <div
-                                    className="flex rounded-xl p-1 mb-6"
-                                    style={{ backgroundColor: "var(--bg)" }}
-                                >
+                                <div className="flex rounded-xl p-1 mb-6 bg-base">
                                     {(["login", "register"] as Tab[]).map((tab) => (
                                         <button
                                             key={tab}
                                             onClick={() => setActiveTab(tab)}
-                                            className="relative flex-1 py-2.5 text-sm font-semibold rounded-lg transition-colors duration-200 capitalize"
-                                            style={{
-                                                color: activeTab === tab ? "#2874F0" : "var(--text-muted)",
-                                            }}
+                                            className={cn(
+                                                "relative flex-1 py-2.5 text-sm font-semibold rounded-lg transition-colors duration-200 capitalize",
+                                                activeTab === tab ? "text-primary" : "text-muted"
+                                            )}
                                         >
                                             {activeTab === tab && (
                                                 <motion.div
                                                     layoutId="activeTab"
-                                                    className="absolute inset-0 rounded-lg"
-                                                    style={{ backgroundColor: "var(--bg-card)", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
+                                                    className="absolute inset-0 rounded-lg bg-card"
+                                                    style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}
                                                     transition={{ type: "spring", bounce: 0.25, duration: 0.4 }}
                                                 />
                                             )}
@@ -253,9 +221,9 @@ export default function LoginPage() {
                                     </motion.div>
                                 </AnimatePresence>
 
-                                {/* Mobile images (shown only on mobile) */}
-                                <div className="lg:hidden mt-8 pt-6 border-t" style={{ borderColor: "var(--border)" }}>
-                                    <p className="text-xs text-center font-medium mb-3" style={{ color: "var(--text-muted)" }}>
+                                {/* Mobile images — */}
+                                <div className="lg:hidden mt-8 pt-6 border-t border-soft">
+                                    <p className="text-muted text-xs text-center font-medium mb-3">
                                         Trusted by 10,000+ students across 51 cities
                                     </p>
                                     <div className="grid grid-cols-2 gap-2">
@@ -286,8 +254,7 @@ export default function LoginPage() {
                                 variants={fadeIn}
                                 initial="hidden"
                                 animate="visible"
-                                className="text-center text-xs mt-4"
-                                style={{ color: "var(--text-muted)" }}
+                                className="text-muted text-center text-xs mt-4"
                             >
                                 A Flipkart Initiative · Supported by{" "}
                                 <span className="font-semibold">Skill India</span>

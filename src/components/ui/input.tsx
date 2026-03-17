@@ -17,16 +17,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         return (
             <div className="flex flex-col gap-1.5">
                 {label && (
-                    <label className="text-sm font-medium" style={{ color: "var(--text)" }}>
+                    <label className="text-ink text-sm font-medium">
                         {label}
                     </label>
                 )}
                 <div className="relative">
                     {icon && (
-                        <span
-                            className="absolute left-3.5 top-1/2 -translate-y-1/2"
-                            style={{ color: "var(--text-muted)" }}
-                        >
+                        <span className="text-muted absolute left-3.5 top-1/2 -translate-y-1/2">
                             {icon}
                         </span>
                     )}

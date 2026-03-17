@@ -134,7 +134,7 @@ export default function RegisterForm() {
             </motion.div>
 
             <motion.div variants={slideUp}>
-                <p className="text-xs text-center" style={{ color: "var(--text-muted)" }}>
+                <p className="text-muted text-xs text-center">
                     By registering, you agree to our{" "}
                     <a href="#" className="text-primary hover:underline">Terms</a>{" "}
                     &{" "}

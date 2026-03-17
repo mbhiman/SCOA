@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { cn } from "@/src/lib/utils";
 import { fadeIn } from "@/src/lib/animations";
 
 function SunIcon() {
@@ -54,15 +55,12 @@ export default function Navbar() {
             variants={fadeIn}
             initial="hidden"
             animate="visible"
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                ? "shadow-lg"
-                : ""
-                }`}
-            style={{
-                backgroundColor: scrolled ? "var(--bg-card)" : "transparent",
-                backdropFilter: scrolled ? "blur(12px)" : "none",
-                borderBottom: scrolled ? "1px solid var(--border)" : "none",
-            }}
+            className={cn(
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+                scrolled
+                    ? "bg-card backdrop-blur-md border-b border-soft shadow-lg"
+                    : "bg-transparent"
+            )}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
@@ -73,7 +71,7 @@ export default function Navbar() {
                             alt="Flipkart SCOA Logo"
                             width={600}
                             height={600}
-                            
+
                             className="h-9 w-auto sm:h-10 md:h-11"
                         />
                     </Link>
@@ -96,12 +94,7 @@ export default function Navbar() {
                                 whileHover={{ scale: 1.08, rotate: 15 }}
                                 whileTap={{ scale: 0.92 }}
                                 onClick={toggleTheme}
-                                className="w-9 h-9 flex items-center justify-center rounded-full border transition-colors duration-200"
-                                style={{
-                                    borderColor: "var(--border)",
-                                    color: "var(--text-muted)",
-                                    backgroundColor: "var(--bg-card)",
-                                }}
+                                className="w-9 h-9 flex items-center justify-center rounded-full border border-soft text-muted bg-card transition-colors duration-200"
                                 aria-label="Toggle dark mode"
                             >
                                 {theme === "dark" ? <SunIcon /> : <MoonIcon />}
